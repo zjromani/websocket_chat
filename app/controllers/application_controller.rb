@@ -5,7 +5,7 @@ class ApplicationController < ActionController::Base
 
   def set_current_user
     @current_user ||= if cookies['name']
-      User.find_or_create_by(name: cookies['name'])
+      User.find_by(name: cookies['name'])
     else
       user = User.all.sample
       cookies['name'] = user.name

@@ -1,7 +1,8 @@
 Rails.application.routes.draw do
-  root to: "chat_rooms#index"
+  root to: 'chat_rooms#index'
 
-  resources :messages
-  resources :chat_rooms
-  resources :users
+  resources :chat_rooms do
+    resource :chat_room_user
+    resources :messages
+  end
 end

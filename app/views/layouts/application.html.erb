@@ -14,9 +14,12 @@
     <div class="container-fluid">
       <div class="navbar-header">
         <%= link_to root_path, class: "navbar-brand" do %>
-          Chat
+          Chatter
         <% end %>
       </div>
+      <ul class="nav navbar-nav navbar-right">
+        <%= "Current User: #{@current_user.name}" %>
+      </ul>
     </div>
   </nav>
 
@@ -26,7 +29,7 @@
         <h5>Chatrooms</h5>
         <ul>
           <% ChatRoom.all.each do |chatroom| %>
-            <li><%= link_to chatroom.name, chatroom %></li>
+            <li><%= link_to "Join #{chatroom.name}", chat_room_chat_room_user_path(chatroom), method: :post %></li>
           <% end %>
         </ul>
         <h5>Users</h5>
