@@ -10,6 +10,15 @@
   </head>
 
   <body>
+    <%= link_to root_path do %>
+      Chat
+    <% end %>
+    <h5>Chatrooms</h5>
+    <ul>
+      <% ChatRoom.all.each do |chatroom| %>
+        <li><%= link_to chatroom.name, chatroom %></li>
+      <% end %>
+    </ul>
     <%= yield %>
   </body>
 </html>
