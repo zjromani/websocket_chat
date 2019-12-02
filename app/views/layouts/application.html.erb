@@ -10,15 +10,36 @@
   </head>
 
   <body>
-    <%= link_to root_path do %>
-      Chat
-    <% end %>
-    <h5>Chatrooms</h5>
-    <ul>
-      <% ChatRoom.all.each do |chatroom| %>
-        <li><%= link_to chatroom.name, chatroom %></li>
-      <% end %>
-    </ul>
-    <%= yield %>
-  </body>
+  <nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <%= link_to root_path, class: "navbar-brand" do %>
+          Chat
+        <% end %>
+      </div>
+    </div>
+  </nav>
+
+  <div class="fluid-container" style="margin-top: 70px">
+    <div class="row">
+      <div class="col-sm-2">
+        <h5>Chatrooms</h5>
+        <ul>
+          <% ChatRoom.all.each do |chatroom| %>
+            <li><%= link_to chatroom.name, chatroom %></li>
+          <% end %>
+        </ul>
+        <h5>Users</h5>
+        <ul>
+          <% User.all.each do |user| %>
+            <li><%= user.name %></li>
+          <% end %>
+        </ul>
+      </div>
+
+      <div class="col-sm-10 col-sm-offset-2">
+        <%= yield %>
+      </div>
+    </row>
+  </div>
 </html>
