@@ -11,11 +11,11 @@ consumer.subscriptions.create("ChatRoomChannel", {
 
   received(data) {
     const active_chatroom = $(`[data-behavior='messages'][data-chat-room-id='${data.chat_room_id}']`);
-    // const id = $("#message_message");
-    // console.log(id.val());
-    // console.log(data);
-    // Called when there's incoming data on the websocket for this channel
+
+    if (active_chatroom.children().length > 10) {
+      active_chatroom.children().first().remove();
+    }
+
     active_chatroom.append(`<div>>${data.user}: ${data.message}</div>`);
-    active_chatroom.children().first().remove();
   },
 });
