@@ -24,3 +24,4 @@ Sessions are managed with cookies. You will be assigned a random user if `cookie
 - Websockets to handle "someone is typing".
 - Websockets to handle people joining and leaving ChatRooms.
 - Better Styling.
+- Cloud Hosting
