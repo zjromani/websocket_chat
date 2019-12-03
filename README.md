@@ -18,6 +18,8 @@ Open `http://localhost:3000/` in your browser and in an incognito browser. Join 
 
 Sessions are managed with cookies. You will be assigned a random user if `cookies['user']` is empty.
 
+![gif gif](https://user-images.githubusercontent.com/13855927/70065077-bf371000-15a7-11ea-8efb-bdb0471cf19e.gif)
+
 ## ToDo
 
 - Rename `Message#message` column as it is confusing to do things like `message.message`
