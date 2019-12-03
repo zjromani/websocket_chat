@@ -2,6 +2,8 @@
 
 This is a very basic chat app with [Action Cable](https://guides.rubyonrails.org/v5.0/action_cable_overview.html) and [Turbo Links](https://github.com/turbolinks/turbolinks).
 
+[Hosted on Heroku](https://websocket-chatter.herokuapp.com/)
+
 ## To Run
 
 `bundle install`
@@ -24,4 +26,3 @@ Sessions are managed with cookies. You will be assigned a random user if `cookie
 - Websockets to handle "someone is typing".
 - Websockets to handle people joining and leaving ChatRooms.
 - Better Styling.
-- Cloud Hosting
