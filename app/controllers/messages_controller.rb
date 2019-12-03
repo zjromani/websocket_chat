@@ -6,7 +6,10 @@ class MessagesController < ApplicationController
     message.user = user
 
     message.save
-    redirect_to @chat_room
+    ActionCable.server.broadcast "chat_room_#{@chat_room.id}",
+      message: message.message,
+      user: user.name,
+      chat_room_id: @chat_room.id
   end
 
   private

@@ -1,3 +1,5 @@
+<%= javascript_pack_tag 'chat_rooms' %>
+
 <p>
 <strong>Users In Chatroom</strong>
 <%= @chat_room.name %>
@@ -12,7 +14,7 @@
   <%= link_to "Leave #{@chat_room.name}", chat_room_chat_room_user_path(@chat_room), method: :delete %></li>
 </p>
 
-<div data-behavior="messages" data-chatroom-id='<%= @chat_room.id %>'>
+<div data-behavior="messages" data-chat-room-id='<%= @chat_room.id %>'>
 <% @messages.each do |message| %>
   <div>
     <%= "> #{message.user.name}: #{message.message}" %>
